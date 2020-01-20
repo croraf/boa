@@ -154,11 +154,7 @@ impl<'a> Lexer<'a> {
     fn read_line(&mut self) -> Result<String, LexerError> {
         let mut buf = String::new();
         while self.preview_next().is_some() {
-<<<<<<< HEAD
             let ch = self.next();
-=======
-            let ch = self.next()?;
->>>>>>> [lexer: single-line-comment] Fix bug when single line comment is last line of file  (#228)
             match ch {
                 _ if ch.is_ascii_control() => {
                     break;
